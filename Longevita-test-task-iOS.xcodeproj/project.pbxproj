@@ -3,18 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		74BE126C2C206FFB000F3D14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE126B2C206FFB000F3D14 /* AppDelegate.swift */; };
 		74BE126E2C206FFB000F3D14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE126D2C206FFB000F3D14 /* SceneDelegate.swift */; };
-		74BE12702C206FFB000F3D14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE126F2C206FFB000F3D14 /* ViewController.swift */; };
+		74BE12702C206FFB000F3D14 /* UserInfoInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE126F2C206FFB000F3D14 /* UserInfoInputViewController.swift */; };
 		74BE12732C206FFB000F3D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BE12712C206FFB000F3D14 /* Main.storyboard */; };
 		74BE12752C206FFF000F3D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74BE12742C206FFF000F3D14 /* Assets.xcassets */; };
 		74BE12782C206FFF000F3D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BE12762C206FFF000F3D14 /* LaunchScreen.storyboard */; };
 		74BE12832C206FFF000F3D14 /* Longevita_test_task_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12822C206FFF000F3D14 /* Longevita_test_task_iOSTests.swift */; };
 		74BE128E2C206FFF000F3D14 /* Longevita_test_task_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE128D2C206FFF000F3D14 /* Longevita_test_task_iOSUITests.swift */; };
+		74BE129F2C207284000F3D14 /* UserInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE129E2C207284000F3D14 /* UserInfoInputView.swift */; };
+		74BE12A52C20732B000F3D14 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 74BE12A42C20732B000F3D14 /* PureLayout */; };
+		74BE12AA2C20737B000F3D14 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12A92C20737B000F3D14 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,7 @@
 		74BE12682C206FFB000F3D14 /* Longevita-test-task-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Longevita-test-task-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74BE126B2C206FFB000F3D14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74BE126D2C206FFB000F3D14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74BE126F2C206FFB000F3D14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74BE126F2C206FFB000F3D14 /* UserInfoInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputViewController.swift; sourceTree = "<group>"; };
 		74BE12722C206FFB000F3D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74BE12742C206FFF000F3D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74BE12772C206FFF000F3D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,8 @@
 		74BE12892C206FFF000F3D14 /* Longevita-test-task-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Longevita-test-task-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74BE128D2C206FFF000F3D14 /* Longevita_test_task_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Longevita_test_task_iOSUITests.swift; sourceTree = "<group>"; };
 		74BE128F2C206FFF000F3D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BE129E2C207284000F3D14 /* UserInfoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputView.swift; sourceTree = "<group>"; };
+		74BE12A92C20737B000F3D14 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BE12A52C20732B000F3D14 /* PureLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +105,15 @@
 		74BE126A2C206FFB000F3D14 /* Longevita-test-task-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				74BE12B42C208166000F3D14 /* Views */,
 				74BE126B2C206FFB000F3D14 /* AppDelegate.swift */,
 				74BE126D2C206FFB000F3D14 /* SceneDelegate.swift */,
-				74BE126F2C206FFB000F3D14 /* ViewController.swift */,
+				74BE126F2C206FFB000F3D14 /* UserInfoInputViewController.swift */,
 				74BE12712C206FFB000F3D14 /* Main.storyboard */,
 				74BE12742C206FFF000F3D14 /* Assets.xcassets */,
 				74BE12762C206FFF000F3D14 /* LaunchScreen.storyboard */,
 				74BE12792C206FFF000F3D14 /* Info.plist */,
+				74BE12A92C20737B000F3D14 /* AppConstants.swift */,
 			);
 			path = "Longevita-test-task-iOS";
 			sourceTree = "<group>";
@@ -128,6 +136,14 @@
 			path = "Longevita-test-task-iOSUITests";
 			sourceTree = "<group>";
 		};
+		74BE12B42C208166000F3D14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74BE129E2C207284000F3D14 /* UserInfoInputView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +160,9 @@
 			dependencies = (
 			);
 			name = "Longevita-test-task-iOS";
+			packageProductDependencies = (
+				74BE12A42C20732B000F3D14 /* PureLayout */,
+			);
 			productName = "Longevita-test-task-iOS";
 			productReference = 74BE12682C206FFB000F3D14 /* Longevita-test-task-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 74BE125F2C206FFB000F3D14;
+			packageReferences = (
+				74BE12A32C20732B000F3D14 /* XCRemoteSwiftPackageReference "PureLayout" */,
+			);
 			productRefGroup = 74BE12692C206FFB000F3D14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74BE12702C206FFB000F3D14 /* ViewController.swift in Sources */,
+				74BE12AA2C20737B000F3D14 /* AppConstants.swift in Sources */,
+				74BE129F2C207284000F3D14 /* UserInfoInputView.swift in Sources */,
+				74BE12702C206FFB000F3D14 /* UserInfoInputViewController.swift in Sources */,
 				74BE126C2C206FFB000F3D14 /* AppDelegate.swift in Sources */,
 				74BE126E2C206FFB000F3D14 /* SceneDelegate.swift in Sources */,
 			);
@@ -593,6 +617,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74BE12A32C20732B000F3D14 /* XCRemoteSwiftPackageReference "PureLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PureLayout/PureLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74BE12A42C20732B000F3D14 /* PureLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74BE12A32C20732B000F3D14 /* XCRemoteSwiftPackageReference "PureLayout" */;
+			productName = PureLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74BE12602C206FFB000F3D14 /* Project object */;
 }
