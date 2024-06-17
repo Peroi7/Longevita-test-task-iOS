@@ -18,6 +18,13 @@
 		74BE129F2C207284000F3D14 /* UserInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE129E2C207284000F3D14 /* UserInfoInputView.swift */; };
 		74BE12A52C20732B000F3D14 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 74BE12A42C20732B000F3D14 /* PureLayout */; };
 		74BE12AA2C20737B000F3D14 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12A92C20737B000F3D14 /* AppConstants.swift */; };
+		74BE12D02C208952000F3D14 /* DateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12CE2C208952000F3D14 /* DateTextField.swift */; };
+		74BE12E92C208D6E000F3D14 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12E82C208D6E000F3D14 /* InputValidator.swift */; };
+		74BE12EE2C208DE4000F3D14 /* ValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12ED2C208DE4000F3D14 /* ValidatorFactory.swift */; };
+		74BE12F32C209085000F3D14 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12F22C209085000F3D14 /* UITextFieldExtensions.swift */; };
+		74BE12F82C20966A000F3D14 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12F72C20966A000F3D14 /* DateFormat.swift */; };
+		74BE13002C2099EF000F3D14 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE12FF2C2099EF000F3D14 /* StringExtensions.swift */; };
+		74BE13052C209D95000F3D14 /* RangeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE13042C209D95000F3D14 /* RangeExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,13 @@
 		74BE128F2C206FFF000F3D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74BE129E2C207284000F3D14 /* UserInfoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputView.swift; sourceTree = "<group>"; };
 		74BE12A92C20737B000F3D14 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		74BE12CE2C208952000F3D14 /* DateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTextField.swift; sourceTree = "<group>"; };
+		74BE12E82C208D6E000F3D14 /* InputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
+		74BE12ED2C208DE4000F3D14 /* ValidatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFactory.swift; sourceTree = "<group>"; };
+		74BE12F22C209085000F3D14 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		74BE12F72C20966A000F3D14 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		74BE12FF2C2099EF000F3D14 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		74BE13042C209D95000F3D14 /* RangeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +127,14 @@
 				74BE12742C206FFF000F3D14 /* Assets.xcassets */,
 				74BE12762C206FFF000F3D14 /* LaunchScreen.storyboard */,
 				74BE12792C206FFF000F3D14 /* Info.plist */,
+				74BE12CC2C208936000F3D14 /* DateTextField */,
 				74BE12A92C20737B000F3D14 /* AppConstants.swift */,
+				74BE12E82C208D6E000F3D14 /* InputValidator.swift */,
+				74BE12ED2C208DE4000F3D14 /* ValidatorFactory.swift */,
+				74BE12F22C209085000F3D14 /* UITextFieldExtensions.swift */,
+				74BE12F72C20966A000F3D14 /* DateFormat.swift */,
+				74BE12FF2C2099EF000F3D14 /* StringExtensions.swift */,
+				74BE13042C209D95000F3D14 /* RangeExtensions.swift */,
 			);
 			path = "Longevita-test-task-iOS";
 			sourceTree = "<group>";
@@ -142,6 +163,14 @@
 				74BE129E2C207284000F3D14 /* UserInfoInputView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		74BE12CC2C208936000F3D14 /* DateTextField */ = {
+			isa = PBXGroup;
+			children = (
+				74BE12CE2C208952000F3D14 /* DateTextField.swift */,
+			);
+			path = DateTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,10 +310,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				74BE12AA2C20737B000F3D14 /* AppConstants.swift in Sources */,
+				74BE12D02C208952000F3D14 /* DateTextField.swift in Sources */,
 				74BE129F2C207284000F3D14 /* UserInfoInputView.swift in Sources */,
+				74BE12F32C209085000F3D14 /* UITextFieldExtensions.swift in Sources */,
+				74BE12F82C20966A000F3D14 /* DateFormat.swift in Sources */,
 				74BE12702C206FFB000F3D14 /* UserInfoInputViewController.swift in Sources */,
+				74BE13002C2099EF000F3D14 /* StringExtensions.swift in Sources */,
+				74BE12E92C208D6E000F3D14 /* InputValidator.swift in Sources */,
 				74BE126C2C206FFB000F3D14 /* AppDelegate.swift in Sources */,
+				74BE13052C209D95000F3D14 /* RangeExtensions.swift in Sources */,
 				74BE126E2C206FFB000F3D14 /* SceneDelegate.swift in Sources */,
+				74BE12EE2C208DE4000F3D14 /* ValidatorFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

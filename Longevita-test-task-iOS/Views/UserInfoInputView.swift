@@ -27,7 +27,8 @@ class UserInfoInputView: UIView, UITextFieldDelegate {
     }
     
     private var inputTitle: UILabel!
-    private var textField: UITextField!
+    var dateTextField: DateTextField!
+    var textField: UITextField!
     
     init(type: InputType) {
         super.init(frame: .zero)
@@ -42,7 +43,16 @@ class UserInfoInputView: UIView, UITextFieldDelegate {
     
     private func setup(type: InputType) {
         inputTitle = UILabel()
-        textField = UITextField(frame: .zero)
+        textField = UITextField()
+        dateTextField = DateTextField()
+        
+        switch type {
+        case .date,.hour,.minute,.name:
+            textField = dateTextField
+            textField.placeholder = ""
+        case .surname:
+            textField.placeholder = "Optional"
+        }
         
         addSubview(inputTitle)
         addSubview(textField)
@@ -57,9 +67,9 @@ class UserInfoInputView: UIView, UITextFieldDelegate {
         textField.autoSetDimension(.height, toSize: Constants.textFieldHeight)
         
         inputTitle.font = Constants.inputTitleFont
-        inputTitle.text = type.rawValue
         
-        textField.placeholder = ""
+        inputTitle.text = type.rawValue
         textField.borderStyle = .roundedRect
+        textField.becomeFirstResponder()
     }
 }
