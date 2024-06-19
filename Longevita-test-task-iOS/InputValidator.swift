@@ -29,6 +29,7 @@ enum ValidatorType {
     case minute
     case name
     case surname
+    case sex
 }
 
 
@@ -40,6 +41,12 @@ struct ValidatorInput: ValidatorConvertible {
         case minuteError = "Invalid input, minute value should be 0-59"
         case nameError = "Invalid name input"
         case surnameError = "Invalid surname input"
+        case sexInputError = "Invalid sex input"
+    }
+    
+    private enum Gender: String {
+        case male = "Male"
+        case female = "Female"
     }
     
     func validated(_ value: String, type: ValidatorType) throws -> String {
@@ -67,6 +74,10 @@ struct ValidatorInput: ValidatorConvertible {
                 return ""
             } else {
                 guard value.isNameValid else { throw ValidationError(ErrorMessages.surnameError.rawValue)}
+            }
+        case .sex:
+            if Gender.male.rawValue.caseInsensitiveCompare(value) != .orderedSame ||  Gender.male.rawValue.caseInsensitiveCompare(value) != .orderedSame {
+                throw ValidationError(ErrorMessages.sexInputError.rawValue)
             }
         }
         return value

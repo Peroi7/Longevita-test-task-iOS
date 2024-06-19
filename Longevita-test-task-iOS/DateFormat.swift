@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: - DateFormat
+
 public enum DateFormat: String {
     case monthYear = "MM'$'yyyy"
     case dayMonthYear = "dd'*'MM'$'yyyy"

@@ -24,6 +24,7 @@ class UserInfoInputView: UIView, UITextFieldDelegate {
         case minute = "Minute"
         case name = "Name"
         case surname = "Surname"
+        case sex = "Sex"
     }
     
     private var inputTitle: UILabel!
@@ -47,8 +48,10 @@ class UserInfoInputView: UIView, UITextFieldDelegate {
         dateTextField = DateTextField()
         
         switch type {
-        case .date,.hour,.minute,.name:
+        case .date:
             textField = dateTextField
+            textField.placeholder = ""
+        case .hour,.minute,.name,.sex:
             textField.placeholder = ""
         case .surname:
             textField.placeholder = "Optional"

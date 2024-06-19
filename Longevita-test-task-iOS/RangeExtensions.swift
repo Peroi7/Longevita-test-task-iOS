@@ -9,6 +9,8 @@ import Foundation
 
 infix operator !~=: ComparisonPrecedence
 
+//MARK: - RangeExpression
+
 extension RangeExpression {
     static func !~=(lhs: Self, rhs: Bound) -> Bool {
         return !(lhs ~= rhs)
