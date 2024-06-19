@@ -7,11 +7,13 @@
 
 import Foundation
 
+//MARK: - ValidatorFactory
+
 enum ValidatorFactory {
     
     static func validatorFor(type: ValidatorType) -> ValidatorConvertible {
         switch type {
-        case .date, .hour, .minute, .name, .surname: return ValidatorInput()
+        case .date, .hour, .minute, .name, .surname, .sex: return ValidatorInput()
         }
     }
 }

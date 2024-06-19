@@ -18,6 +18,7 @@ class UserInfoInputViewController: UIViewController {
     private let minuteUserInfoInputView = UserInfoInputView(type: .minute)
     private let nameUserInfoInputView = UserInfoInputView(type: .name)
     private let surnameUserInfoInputView = UserInfoInputView(type: .surname)
+    private let sexUserInfoInputView = UserInfoInputView(type: .sex)
 
     @IBOutlet weak var stackViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputFieldsStackView: UIStackView!
@@ -31,15 +32,31 @@ class UserInfoInputViewController: UIViewController {
         setupStackView()
     }
     
+    private func fire(viewModel: ViewModel) {
+        viewModel.fetch {[weak self] (user, error) in
+            error == nil ?  DispatchQueue.main.async {
+                self?.navigationController?.pushViewController(UIViewController(), animated: true)
+            } : DispatchQueue.main.async {
+                self?.showAlert(for: error?.localizedDescription ?? "")
+            }
+        }
+    }
+    
     private func validate() {
-        do {
-            let dateData = try dateUserInfoInputView.textField.validatedText(validationType: .date)
-            let hourData = try hourUserInfoInputView.textField.validatedText(validationType: .hour)
-            let minuteData = try minuteUserInfoInputView.textField.validatedText(validationType: .minute)
-            let nameData = try nameUserInfoInputView.textField.validatedText(validationType: .name)
-            let surname = try surnameUserInfoInputView.textField.validatedText(validationType: .surname)
-        } catch(let error) {
-            showAlert(for: (error as! ValidationError).message)
+        let dateData = dateUserInfoInputView.textField.text ?? ""
+        let hourData = hourUserInfoInputView.textField.text ?? ""
+        let minuteData = minuteUserInfoInputView.textField.text ?? ""
+        let nameData = nameUserInfoInputView.textField.text ?? ""
+        let surnameData = surnameUserInfoInputView.textField.text ?? ""
+        let sexData = sexUserInfoInputView.textField.text ?? ""
+        
+        let viewModel = ViewModel(model: .init(date: dateData, hour: hourData, minute: minuteData, name: nameData, surname: surnameData, sex: sexData))
+        
+        viewModel.validate {[weak self] (errorMessage) in
+            errorMessage == nil ? self?.fire(viewModel: viewModel) : DispatchQueue.main.async {
+                self?.showAlert(for: errorMessage ?? "")
+                return
+            }
         }
     }
     
@@ -63,6 +80,7 @@ extension UserInfoInputViewController {
         inputFieldsStackView.addArrangedSubview(minuteUserInfoInputView)
         inputFieldsStackView.addArrangedSubview(nameUserInfoInputView)
         inputFieldsStackView.addArrangedSubview(surnameUserInfoInputView)
+        inputFieldsStackView.addArrangedSubview(sexUserInfoInputView)
         
         stackViewHeightConstraint.constant = CGFloat(inputFieldsStackView.arrangedSubviews.count * Constants.userInfoInputViewHeight) // dynamic stackView height
     }
