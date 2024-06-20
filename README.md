@@ -2,7 +2,7 @@
 
 # Simple app in a advanced way
 
-## Upute: potrebno je klonirati repozitorij iz terminala sa naredbom <ins>git clone</ins> te se prebaciti u develop granu.
+## Upute: potrebno je klonirati repozitorij iz terminala sa naredbom <ins>git clone</ins> te se prebaciti u develop granu i pokrenuti projekt u Xcode-u.
 Requirements: Xcode 12+
 
 **Libraries - SPM**
