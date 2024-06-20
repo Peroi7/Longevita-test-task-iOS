@@ -76,7 +76,6 @@ extension Network: URLRequestable {
             completion(urlRequest, nil)
             
         } catch let error {
-            print(error)
             completion(nil, error)
         }
     }

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7457B8522C230A1300E3B001 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7457B8512C230A1300E3B001 /* DetailsViewController.swift */; };
+		7457B8592C231BE900E3B001 /* IHProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7457B8582C231BE900E3B001 /* IHProgressHUD */; };
 		7457E6D42C2117E9007FC4F4 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 7457E6D32C2117E9007FC4F4 /* PureLayout */; };
+		7459CA3B2C23A53200A690CC /* UserInfoLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459CA3A2C23A53200A690CC /* UserInfoLabelView.swift */; };
 		745A79B62C21AE9000DB591E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A79B52C21AE9000DB591E /* User.swift */; };
 		746DED402C21BDCE00078612 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DED3F2C21BDCE00078612 /* Network.swift */; };
 		746DED472C21E05400078612 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DED462C21E05400078612 /* ViewModel.swift */; };
@@ -117,9 +120,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7457B8512C230A1300E3B001 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7457E6C22C211595007FC4F4 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Alamofire; sourceTree = "<group>"; };
 		7457E6E22C21198E007FC4F4 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Alamofire.xcodeproj; sourceTree = "<group>"; };
 		7457E71D2C211A8A007FC4F4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/Alamofire-adzmmsahmtxikcgfxdrqlmiuxzuu/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
+		7459CA3A2C23A53200A690CC /* UserInfoLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoLabelView.swift; sourceTree = "<group>"; };
 		745A79B52C21AE9000DB591E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		746DED3F2C21BDCE00078612 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		746DED462C21E05400078612 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7457B8592C231BE900E3B001 /* IHProgressHUD in Frameworks */,
 				7457E6D42C2117E9007FC4F4 /* PureLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +206,50 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7459CA3F2C23BB8C00A690CC /* Extensions+ */ = {
+			isa = PBXGroup;
+			children = (
+				74BE12FF2C2099EF000F3D14 /* StringExtensions.swift */,
+				74BE13042C209D95000F3D14 /* RangeExtensions.swift */,
+			);
+			path = "Extensions+";
+			sourceTree = "<group>";
+		};
+		7459CA432C23BBD200A690CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				746DED462C21E05400078612 /* ViewModel.swift */,
+				745A79B52C21AE9000DB591E /* User.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7459CA442C23BBFA00A690CC /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				74BE12E82C208D6E000F3D14 /* InputValidator.swift */,
+				74BE12ED2C208DE4000F3D14 /* ValidatorFactory.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		7459CA452C23BC1600A690CC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				746DED3F2C21BDCE00078612 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7459CA462C23BC2400A690CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				74BE126F2C206FFB000F3D14 /* UserInfoInputViewController.swift */,
+				7457B8512C230A1300E3B001 /* DetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		74BE125F2C206FFB000F3D14 = {
 			isa = PBXGroup;
 			children = (
@@ -224,24 +274,20 @@
 		74BE126A2C206FFB000F3D14 /* Longevita-test-task-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7459CA462C23BC2400A690CC /* Controllers */,
+				7459CA452C23BC1600A690CC /* Network */,
+				7459CA442C23BBFA00A690CC /* Validator */,
+				7459CA432C23BBD200A690CC /* ViewModel */,
+				7459CA3F2C23BB8C00A690CC /* Extensions+ */,
 				74BE12B42C208166000F3D14 /* Views */,
+				74BE12CC2C208936000F3D14 /* DateTextField */,
 				74BE126B2C206FFB000F3D14 /* AppDelegate.swift */,
 				74BE126D2C206FFB000F3D14 /* SceneDelegate.swift */,
-				74BE126F2C206FFB000F3D14 /* UserInfoInputViewController.swift */,
 				74BE12712C206FFB000F3D14 /* Main.storyboard */,
 				74BE12742C206FFF000F3D14 /* Assets.xcassets */,
 				74BE12762C206FFF000F3D14 /* LaunchScreen.storyboard */,
 				74BE12792C206FFF000F3D14 /* Info.plist */,
-				74BE12CC2C208936000F3D14 /* DateTextField */,
 				74BE12A92C20737B000F3D14 /* AppConstants.swift */,
-				74BE12E82C208D6E000F3D14 /* InputValidator.swift */,
-				74BE12ED2C208DE4000F3D14 /* ValidatorFactory.swift */,
-				74BE12F72C20966A000F3D14 /* DateFormat.swift */,
-				74BE12FF2C2099EF000F3D14 /* StringExtensions.swift */,
-				74BE13042C209D95000F3D14 /* RangeExtensions.swift */,
-				745A79B52C21AE9000DB591E /* User.swift */,
-				746DED3F2C21BDCE00078612 /* Network.swift */,
-				746DED462C21E05400078612 /* ViewModel.swift */,
 			);
 			path = "Longevita-test-task-iOS";
 			sourceTree = "<group>";
@@ -268,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				74BE129E2C207284000F3D14 /* UserInfoInputView.swift */,
+				7459CA3A2C23A53200A690CC /* UserInfoLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				74BE12CE2C208952000F3D14 /* DateTextField.swift */,
+				74BE12F72C20966A000F3D14 /* DateFormat.swift */,
 			);
 			path = DateTextField;
 			sourceTree = "<group>";
@@ -298,6 +346,7 @@
 			name = "Longevita-test-task-iOS";
 			packageProductDependencies = (
 				7457E6D32C2117E9007FC4F4 /* PureLayout */,
+				7457B8582C231BE900E3B001 /* IHProgressHUD */,
 			);
 			productName = "Longevita-test-task-iOS";
 			productReference = 74BE12682C206FFB000F3D14 /* Longevita-test-task-iOS.app */;
@@ -372,6 +421,7 @@
 			mainGroup = 74BE125F2C206FFB000F3D14;
 			packageReferences = (
 				7457E6D22C2117E9007FC4F4 /* XCRemoteSwiftPackageReference "PureLayout" */,
+				7457B8572C231BE900E3B001 /* XCRemoteSwiftPackageReference "IHProgressHUD" */,
 			);
 			productRefGroup = 74BE12692C206FFB000F3D14 /* Products */;
 			projectDirPath = "";
@@ -503,12 +553,14 @@
 				74BE12F82C20966A000F3D14 /* DateFormat.swift in Sources */,
 				745A79B62C21AE9000DB591E /* User.swift in Sources */,
 				74BE12702C206FFB000F3D14 /* UserInfoInputViewController.swift in Sources */,
+				7459CA3B2C23A53200A690CC /* UserInfoLabelView.swift in Sources */,
 				74BE13002C2099EF000F3D14 /* StringExtensions.swift in Sources */,
 				74BE12E92C208D6E000F3D14 /* InputValidator.swift in Sources */,
 				74BE126C2C206FFB000F3D14 /* AppDelegate.swift in Sources */,
 				74BE13052C209D95000F3D14 /* RangeExtensions.swift in Sources */,
 				74BE126E2C206FFB000F3D14 /* SceneDelegate.swift in Sources */,
 				74BE12EE2C208DE4000F3D14 /* ValidatorFactory.swift in Sources */,
+				7457B8522C230A1300E3B001 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +897,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7457B8572C231BE900E3B001 /* XCRemoteSwiftPackageReference "IHProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swiftify-Corp/IHProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.8;
+			};
+		};
 		7457E6D22C2117E9007FC4F4 /* XCRemoteSwiftPackageReference "PureLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/PureLayout/PureLayout";
@@ -856,6 +916,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7457B8582C231BE900E3B001 /* IHProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7457B8572C231BE900E3B001 /* XCRemoteSwiftPackageReference "IHProgressHUD" */;
+			productName = IHProgressHUD;
+		};
 		7457E6D32C2117E9007FC4F4 /* PureLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7457E6D22C2117E9007FC4F4 /* XCRemoteSwiftPackageReference "PureLayout" */;
