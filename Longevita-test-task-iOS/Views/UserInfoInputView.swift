@@ -10,7 +10,7 @@ import PureLayout
 
 class UserInfoInputView: UIView, UITextFieldDelegate {
     
-    private enum Constants {
+    enum Constants {
         static let inputTitleHeight: CGFloat = 20.0
         static let inputTitleFont: UIFont = UIFont.systemFont(ofSize: 16.0, weight: .bold)
         static let textFieldHeight: CGFloat = 40.0
@@ -27,7 +27,7 @@ class UserInfoInputView: UIView, UITextFieldDelegate {
         case sex = "Sex"
     }
     
-    private var inputTitle: UILabel!
+    var inputTitle: UILabel!
     var dateTextField: DateTextField!
     var textField: UITextField!
     
@@ -42,11 +42,7 @@ class UserInfoInputView: UIView, UITextFieldDelegate {
     
     //MARK: - Setup
     
-    private func setup(type: InputType) {
-        inputTitle = UILabel()
-        textField = UITextField()
-        dateTextField = DateTextField()
-        
+    func setupPlaceholder(type: InputType) {
         switch type {
         case .date:
             textField = dateTextField
@@ -56,21 +52,32 @@ class UserInfoInputView: UIView, UITextFieldDelegate {
         case .surname:
             textField.placeholder = "Optional"
         }
-        
-        addSubview(inputTitle)
+    }
+    
+    func addInfoValueView() {        
         addSubview(textField)
-        
-        inputTitle.autoPinEdgesToSuperviewEdges(with: .init(top: AppConstants.paddingDefault, left: AppConstants.paddingDefault + AppConstants.paddingDefaultSmall, bottom: AppConstants.paddingDefault, right: AppConstants.paddingDefault), excludingEdge: .bottom)
-        inputTitle.autoSetDimension(.height, toSize: Constants.inputTitleHeight)
         
         textField.autoPinEdge(.top, to: .bottom, of: inputTitle, withOffset: AppConstants.paddingDefaultSmall)
         textField.autoPinEdge(.left, to: .left, of: self, withOffset: AppConstants.paddingDefault)
         textField.autoPinEdge(.right, to: .right, of: inputTitle)
         textField.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -AppConstants.paddingDefaultSmall)
         textField.autoSetDimension(.height, toSize: Constants.textFieldHeight)
+    }
+    
+    func setup(type: InputType) {
+        inputTitle = UILabel()
+        textField = UITextField()
+        dateTextField = DateTextField()
+        
+        addSubview(inputTitle)
+        
+        inputTitle.autoPinEdgesToSuperviewEdges(with: .init(top: AppConstants.paddingDefault, left: AppConstants.paddingDefault + AppConstants.paddingDefaultSmall, bottom: AppConstants.paddingDefault, right: AppConstants.paddingDefault), excludingEdge: .bottom)
+        inputTitle.autoSetDimension(.height, toSize: Constants.inputTitleHeight)
+        
+        setupPlaceholder(type: type)
+        addInfoValueView()
         
         inputTitle.font = Constants.inputTitleFont
-        
         inputTitle.text = type.rawValue
         textField.borderStyle = .roundedRect
         textField.becomeFirstResponder()

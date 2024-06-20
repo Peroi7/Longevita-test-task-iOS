@@ -15,6 +15,8 @@ class ViewModel {
         self.model = model
     }
     
+    //MARK: - Fetch
+    
     func fetch(completion:((User?, Error?) -> Void)?) {
         let network = Network(model: model)
         network.firePost {(result) in
@@ -26,6 +28,8 @@ class ViewModel {
             }
         }
     }
+    
+    //MARK: - Validation
     
     func validate(completion:((String?) -> Void)?) {
         do {
@@ -43,6 +47,8 @@ class ViewModel {
 }
 
 extension ViewModel {
+    
+    //MARK: - ValidatedText
     
     func validatedText(validationType: ValidatorType, text: String) throws -> String {
         let validator = ValidatorFactory.validatorFor(type: validationType)

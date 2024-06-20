@@ -32,8 +32,9 @@ enum ValidatorType {
     case sex
 }
 
-
 struct ValidatorInput: ValidatorConvertible {
+    
+    //MARK: - ErrorMessages
     
     private enum ErrorMessages: String {
         case dateError = "Invalid date input"
@@ -49,6 +50,8 @@ struct ValidatorInput: ValidatorConvertible {
         case female = "Female"
     }
     
+    //MARK: - Validated
+    
     func validated(_ value: String, type: ValidatorType) throws -> String {
         
         switch type {
@@ -59,15 +62,15 @@ struct ValidatorInput: ValidatorConvertible {
                 throw ValidationError(ErrorMessages.dateError.rawValue)
             }
         case .hour:
-            if 0...23 !~= value.intValue {
+            guard !(0...23 !~= value.intValue) && !value.isEmpty else {
                 throw ValidationError(ErrorMessages.hourError.rawValue)
-        }
+            }
         case .minute:
-            if 0...59 !~= value.intValue {
+            guard !(0...59 !~= value.intValue) && !value.isEmpty else {
                 throw ValidationError(ErrorMessages.minuteError.rawValue)
         }
         case .name:
-            guard value.isNameValid else { throw ValidationError(ErrorMessages.nameError.rawValue)}
+            guard value.isNameValid && !value.isEmpty else { throw ValidationError(ErrorMessages.nameError.rawValue)}
             
         case .surname:
             if value.isEmpty {
@@ -75,8 +78,9 @@ struct ValidatorInput: ValidatorConvertible {
             } else {
                 guard value.isNameValid else { throw ValidationError(ErrorMessages.surnameError.rawValue)}
             }
+            
         case .sex:
-            if Gender.male.rawValue.caseInsensitiveCompare(value) != .orderedSame ||  Gender.male.rawValue.caseInsensitiveCompare(value) != .orderedSame {
+            if Gender.male.rawValue.caseInsensitiveCompare(value) != .orderedSame && Gender.female.rawValue.caseInsensitiveCompare(value) != .orderedSame {
                 throw ValidationError(ErrorMessages.sexInputError.rawValue)
             }
         }

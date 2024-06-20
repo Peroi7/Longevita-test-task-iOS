@@ -38,12 +38,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiK-jZ-ONf" userLabel="ContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FHc-K3-IND">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="450" id="PKu-PE-jkB"/>
-                                                </constraints>
-                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhc-08-Y5t">
                                                 <rect key="frame" x="32" y="716" width="350" height="50"/>
                                                 <color key="backgroundColor" red="0.035294117647058823" green="0.32156862745098042" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,12 +60,9 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="FHc-K3-IND" firstAttribute="leading" secondItem="aiK-jZ-ONf" secondAttribute="leading" id="Jit-6K-WcC"/>
                                             <constraint firstAttribute="trailing" secondItem="Vhc-08-Y5t" secondAttribute="trailing" constant="32" id="XY8-CD-0z5"/>
                                             <constraint firstItem="Vhc-08-Y5t" firstAttribute="leading" secondItem="aiK-jZ-ONf" secondAttribute="leading" constant="32" id="cmx-bj-65l"/>
                                             <constraint firstAttribute="bottom" secondItem="Vhc-08-Y5t" secondAttribute="bottom" constant="42" id="l7F-Oz-jcu"/>
-                                            <constraint firstItem="FHc-K3-IND" firstAttribute="top" secondItem="aiK-jZ-ONf" secondAttribute="top" id="qoB-hf-u3U"/>
-                                            <constraint firstAttribute="trailing" secondItem="FHc-K3-IND" secondAttribute="trailing" id="zZQ-Wa-nKu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -97,10 +88,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create User Information" id="klH-us-wBi"/>
-                    <connections>
-                        <outlet property="inputFieldsStackView" destination="FHc-K3-IND" id="yL7-T9-7r9"/>
-                        <outlet property="stackViewHeightConstraint" destination="PKu-PE-jkB" id="IWJ-Th-FXT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
